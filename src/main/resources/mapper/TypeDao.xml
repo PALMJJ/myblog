@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiaojun.dao.TypeDao">
+    <!--新增保存分类-->
+    <insert id="saveType" parameterType="com.jiaojun.entity.Type">
+        INSERT INTO myblog.t_type
+        VALUES (#{id}, #{name})
+    </insert>
+
+    <!--根据id查询分类-->
+    <select id="getType" resultType="com.jiaojun.entity.Type">
+        SELECT id, name FROM myblog.t_type
+        WHERE id = #{id}
+    </select>
+
+    <!--查询所有分类-->
+    <select id="getAllType" resultType="com.jiaojun.entity.Type">
+        SELECT * FROM myblog.t_type
+    </select>
+
+    <!--根据分类名称来查询-->
+    <select id="getTypeByName" resultType="com.jiaojun.entity.Type">
+        SELECT * FROM myblog.t_type
+        WHERE name = #{name}
+    </select>
+
+    <!--编辑修改分类-->
+    <update id="updateType" parameterType="com.jiaojun.entity.Type">
+        UPDATE myblog.t_type
+        SET name = #{name}
+        WHERE id = #{id}
+    </update>
+
+    <!--删除分类-->
+    <delete id="deleteType">
+        DELETE FROM myblog.t_type
+        WHERE id = #{id}
+    </delete>
+
+    <!--类型与博客结果集映射-->
+    <resultMap id="type" type="com.jiaojun.entity.Type">
+        <id property="id" column="tid"/>
+        <result property="name" column="name"/>
+        <collection property="blogs" ofType="com.jiaojun.entity.Blog">
+            <id property="id" column="bid"/>
+            <result property="title" column="title"/>
+            <result property="typeId" column="type_id"/>
+        </collection>
+    </resultMap>
+
+    <!--查询分类-->
+    <select id="getAllTypeAndBlog" resultMap="type">
+        SELECT t.id tid, t.name, b.id bid, b.title, b.type_id
+        FROM myblog.t_type t, myblog.t_blog b
+        WHERE t.id = b.type_id
+    </select>
+</mapper>
