@@ -24,5 +24,7 @@
 
 # 页面展示
 ## 前端页面
-首页
-![](https://github.com/PALMJJ/myblog/raw/master/images/1.PNG)
+首页页面
+![](https://github.com/PALMJJ/myblog/blob/master/images/1.PNG)
+![](https://github.com/PALMJJ/myblog/blob/master/images/2.PNG)
+![](https://github.com/PALMJJ/myblog/blob/master/images/3.PNG)
