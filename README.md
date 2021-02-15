@@ -24,3 +24,5 @@
 
 # 页面展示
 ## 前端页面
+首页
+![](https://github.com/PALMJJ/myblog/images/1.PNG)
