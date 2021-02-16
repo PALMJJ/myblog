@@ -1,5 +1,5 @@
 # myblog
-使用Springboot+Thymeleaf制作个人博客
+使用Springboot+Thymeleaf制作个人博客，参考[onestar](https://onestar.newstar.net.cn/)
 
 # 使用的技术
 ## 前端
