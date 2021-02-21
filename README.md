@@ -194,7 +194,7 @@ SET FOREIGN_KEY_CHECKS=1;
 ```
 
 ## 数据表存放数据示例
-用户数据表：avatar表示头像，路径为resources资源路径下images文件夹中的文件，password存放使用MD5加密后的密码，比如密码为123456.加密后为图中所示
+用户数据表：avatar表示头像，路径为resources资源路径下images文件夹中的文件，password存放使用MD5加密后的密码，比如密码为123456，加密后为图中所示
 ![](https://github.com/PALMJJ/myblog/blob/master/images/20.PNG)
 
 相册数据表：这里只是样例，所用的图片也是资源路径下pictures文件夹中的文件，但通过后台上传的图片肯定不能通过已经压缩好的jar包上传，所以这时候一般使用图床，生成资源地址
